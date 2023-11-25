@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="79d9f681471a31100f143714846d4382" label="Patient" max_length="40" name="x_1105584_hma_patient" type="collection">
+        <element label="closed by" max_length="32" name="closed_by" read_only="true" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Date of Join" max_length="40" name="date_of_join" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Name" max_length="40" name="name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="3" default="new" label="State" max_length="40" name="state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="new" sequence="0" value="new"/>
+                <element inactive_on_update="false" label="in progress" sequence="1" value="in_progress"/>
+                <element inactive_on_update="false" label="completed" sequence="2" value="completed"/>
+            </choice>
+        </element>
+        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="created by" max_length="32" name="u_created_by" read_only="true" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <index name="index">
+            <element name="closed_by"/>
+        </index>
+        <index name="index2">
+            <element name="sys_class_name"/>
+        </index>
+        <index name="index3">
+            <element name="u_created_by"/>
+        </index>
+    </element>
+</database>
